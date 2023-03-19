@@ -14,8 +14,8 @@ class CreatedTablePayment extends Migration
     public function up()
     {
         Schema::create('payment', function(Blueprint $table){
-            
-            $table->id('payment_id');
+
+            $table->id('id');
             $table->tinyInteger('method');
             $table->tinyInteger('status');
             $table->foreignId('shipping_id')->nullable()

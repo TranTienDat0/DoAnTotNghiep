@@ -13,7 +13,19 @@ class CreatedTableOrder extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('order', function(Blueprint $table){
+            
+            $table->id('id');
+            $table->tinyInteger('status');
+            $table->date('date');
+            $table->double('total');
+            $table->foreignId('shipping_id')->nullable()
+                ->constrained('shipping')
+                ->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()
+                ->constrained('users')
+                ->onDelete('cascade');
+        });
     }
 
     /**
@@ -23,6 +35,6 @@ class CreatedTableOrder extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropDatabaseIfExists('order');
     }
 }

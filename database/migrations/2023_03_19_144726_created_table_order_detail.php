@@ -14,7 +14,7 @@ class CreatedTableOrderDetail extends Migration
     public function up()
     {
         Schema::create('order_detail', function(Blueprint $table){
-            
+
             $table->id('order_detail_id');
             $table->string('product_name');
             $table->double('price');
@@ -35,6 +35,6 @@ class CreatedTableOrderDetail extends Migration
      */
     public function down()
     {
-        Schema::dropDatabaseIfExists('payment');
+        Schema::dropDatabaseIfExists('order_detail');
     }
 }

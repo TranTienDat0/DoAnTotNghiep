@@ -13,21 +13,17 @@ class CreatedTableShipping extends Migration
      */
     public function up()
     {
-        Schema::create('order', function(Blueprint $table){
-            
-            $table->id('order_id');
-            $table->tinyInteger('status');
-            $table->date('date');
-            $table->double('total');
-            $table->foreignId('shipping_id')->nullable()
-                ->constrained('shipping')
-                ->onDelete('cascade');
-            $table->foreignId('user_id')->nullable()
-                ->constrained('users')
-                ->onDelete('cascade');
+        Schema::create('shipping', function(Blueprint $table)
+        {
+            $table->id('id');
+            $table->string('name');
+            $table->string('email_address');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('note');
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
@@ -35,6 +31,6 @@ class CreatedTableShipping extends Migration
      */
     public function down()
     {
-        Schema::dropDatabaseIfExists('order');
+        Schema::dropIfExists('shipping');
     }
 }

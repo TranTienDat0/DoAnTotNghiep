@@ -13,8 +13,8 @@ class CreatedTableParentCategory extends Migration
      */
     public function up()
     {
-        Schema::create('parent_categoies', function(Blueprint $table){
-            $table->id('parent_categories_id');
+        Schema::create('parent_categories', function(Blueprint $table){
+            $table->id('id');
             $table->string('name');
         });
     }
@@ -26,6 +26,6 @@ class CreatedTableParentCategory extends Migration
      */
     public function down()
     {
-        Schema::dropDatabaseIfExists('parent_categoies');
+        Schema::dropDatabaseIfExists('parent_categories');
     }
 }
