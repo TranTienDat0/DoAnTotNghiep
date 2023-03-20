@@ -25,6 +25,8 @@ class CreatedTableOrder extends Migration
             $table->foreignId('user_id')->nullable()
                 ->constrained('users')
                 ->onDelete('cascade');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

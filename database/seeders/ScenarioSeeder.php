@@ -17,6 +17,13 @@ class ScenarioSeeder extends Seeder
         // call seeder class
         $this->call([
             UserSeeder::class,
+            ShippingSeeder::class,
+            OrderSeeder::class,
+            ParentCategorySeeder::class,
+            CategorySeeder::class,
+            ProductSeeder::class,
+            PaymentSeeder::class,
+            OrderDetailSeeder::class,
         ]);
     }
 }

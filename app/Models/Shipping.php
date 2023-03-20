@@ -9,6 +9,7 @@ class Shipping extends BaseModel implements Authenticatable
 {
     use AuthenticatableContract;
 
+    protected $table = 'shipping';
     /**
      * The attributes that are mass assignable.
      *
@@ -17,8 +18,19 @@ class Shipping extends BaseModel implements Authenticatable
     protected $fillable = [
         'name',
         'email_address',
-        'phone',   
+        'phone',
         'address',
         'note',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $dates = [     
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 }

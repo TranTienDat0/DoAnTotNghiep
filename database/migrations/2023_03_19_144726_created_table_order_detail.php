@@ -16,7 +16,7 @@ class CreatedTableOrderDetail extends Migration
         Schema::create('order_detail', function(Blueprint $table){
 
             $table->id('order_detail_id');
-            $table->string('product_name');
+            //$table->string('product_name');
             $table->double('price');
             $table->double('quantity');
             $table->foreignId('products_id')->nullable()
@@ -25,6 +25,8 @@ class CreatedTableOrderDetail extends Migration
             $table->foreignId('order_id')->nullable()
                 ->constrained('order')
                 ->onDelete('cascade');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

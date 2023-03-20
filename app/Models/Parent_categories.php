@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Authenticatable;
 
-class Parent_catogories extends BaseModel implements Authenticatable
+class Parent_categories extends BaseModel implements Authenticatable
 {
     use AuthenticatableContract;
 

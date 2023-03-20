@@ -15,12 +15,14 @@ class CreatedTableShipping extends Migration
     {
         Schema::create('shipping', function(Blueprint $table)
         {
-            $table->id('id');
+            $table->id();
             $table->string('name');
             $table->string('email_address');
             $table->string('address');
             $table->string('phone');
             $table->string('note');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
     

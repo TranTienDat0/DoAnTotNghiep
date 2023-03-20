@@ -24,6 +24,8 @@ class CreatedTablePayment extends Migration
             $table->foreignId('order_id')->nullable()
                 ->constrained('order')
                 ->onDelete('cascade');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

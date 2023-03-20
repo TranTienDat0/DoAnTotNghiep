@@ -16,6 +16,8 @@ class CreatedTableParentCategory extends Migration
         Schema::create('parent_categories', function(Blueprint $table){
             $table->id('id');
             $table->string('name');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

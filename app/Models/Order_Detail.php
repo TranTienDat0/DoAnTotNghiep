@@ -9,8 +9,10 @@ class Order_Detail extends BaseModel implements Authenticatable
 {
     use AuthenticatableContract;
 
+    protected $table = 'order_detail';
+    
     protected $fillable = [
-        'product_name',
+        //'product_name',
         'price',
         'quantity',
         'products_id',

@@ -62,6 +62,4 @@ class User extends BaseModel implements Authenticatable
         'updated_at',
         'deleted_at',
     ];
-
-
 }

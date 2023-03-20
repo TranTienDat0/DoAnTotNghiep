@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Authenticatable;
 
-class User extends BaseModel implements Authenticatable
+class Order extends BaseModel implements Authenticatable
 {
     use AuthenticatableContract;
-
+    protected $table = 'order';
     // role
     public const STATUS_WAIT = 0;
     public const STATUS_DO = 1;
