@@ -3,9 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\User;
 
-class UserFactory extends Factory
+class ShippingFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,12 +16,9 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'address' => $this->faker->address(),
-            //'password' => md5($this->faker->password),
-            'gender' => $this->faker->randomElement(array_keys(User::$genders)),
-            'date_of_birth' => $this->faker->date(),
             'email_address' => $this->faker->unique()->safeEmail(),
-            'phone' => $this->faker->numerify('0#########'),                   
-            'role' => $this->faker->randomElement(array_keys(User::$roles))
+            'phone' => $this->faker->numerify('0#########'),
+            'note' => 'Đóng hàng cẩn thận',
         ];
     }
 }
